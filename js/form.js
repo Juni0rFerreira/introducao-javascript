@@ -1,28 +1,34 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
-    botaoAdicionar.addEventListener("click", function(){
-        event.preventDefault();
-        
-        var form = document.querySelector("#form-adiciona");
-        
-        var paciente = obtemPacienteDoFormulario(form);
+botaoAdicionar.addEventListener("click", function(event) {
 
-        var pacienteTr = montaTr(paciente);
+    event.preventDefault();
 
-        var erros = validaPaciente(paciente);
+    var form = document.querySelector("#form-adiciona");
+    var paciente = obtemPacienteDoFormulario(form);
 
-        if(erros.length > 0){
-            exibeMensagensDeErro(erros);
-            return;
-        }
+    var pacienteTr = montaTr(paciente);
 
-        var tabela = document. querySelector("#tabela-pacientes");
+    var erros = validaPaciente(paciente);
+    if (erros.length > 0) {
+        exibeMensagensDeErro(erros);
+        return;
+    }
 
-        tabela.appendChild(pacienteTr);
+    var tabela = document.querySelector("#tabela-pacientes");
 
-        form.reset()
-        var mensagensErro = document.querySelector("#mensagens-erro");
-        mensagensErro.innerHTML = "";
+    tabela.appendChild(pacienteTr);
+
+    form.reset();
+    var mensagensErro = document.querySelector("#mensagens-erro");
+    mensagensErro.innerHTML = "";
+
 });
+
+function adicionaPacienteNaTabela(paciente) {
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
 
 function exibeMensagensDeErro(erros){
     var ul = document.querySelector("#mensagens-erro");
