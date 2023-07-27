@@ -7,9 +7,9 @@ for(var i = 0; i < pacientes.length; i++) {
 
     var paciente = pacientes[i];
 
-    var peso = tdPeso.textContent;
-
+    
     var tdPeso = paciente.querySelector(".info-peso");
+    var peso = tdPeso.textContent;
 
     var tdAltura = paciente.querySelector(".info-altura");
     var altura = tdAltura.textContent;
