@@ -18,6 +18,8 @@
 		<main>
 			<section class="container">
 				<h2>Meus pacientes</h2>
+				<label for="filtrar-tabela">Filtre:</label>
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Buscar por">
 				<table>
 					<thead>
 						<tr>
@@ -70,6 +72,7 @@
 					</tbody>
 				</table>
 
+				<button id="buscar-pacientes" class="botao bto-principal">Buscar Pacientes</button>
 			</section>
 		</main>
 		<br>
@@ -103,5 +106,7 @@
 		<script src="./js/main.js"></script>
 		<script src="./js/form.js"></script>
 		<script src="./js/remover_paciente.js"></script>
+		<script src="./js/filtrar.js"></script>
+		<script src="./js/buscar_paciente.js"></script>
 	</body>
 </html>
